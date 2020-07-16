@@ -11,6 +11,7 @@ FROM golang:1.14.2 AS server
 WORKDIR /server/
 COPY ./server/* /server/
 RUN go build -o uno .
+RUN go test
 
 FROM scratch
 WORKDIR /uno
